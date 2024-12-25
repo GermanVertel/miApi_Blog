@@ -10,7 +10,7 @@ conexion();
 
 // crear el servidor de node
 const app = express();
-const puerto = 3900;
+const puerto = 4000;
 
 // configurar cors
 app.use(cors());
@@ -19,6 +19,15 @@ app.use(cors());
 app.use(express.json());
 
 // crear rutas
+
+app.get("/probando", (req, res) => {
+    console.log("se ha ejecutado la ruta probando");
+
+    return res.status(200).json({
+        "nombre": "Carlos",
+        "edad": 30
+    });
+});
 
 // crear servidor y escuchar peticiones http
 app.listen(puerto, () => {

@@ -20,6 +20,13 @@ app.use(express.json());
 
 // crear rutas
 
+const rutas_articulo = require('./rutas/articulo');
+//cargo las rutas
+
+app.use('/api', rutas_articulo);
+
+//rutas de prueba
+
 app.get("/probando", (req, res) => {
     console.log("se ha ejecutado la ruta probando");
 
